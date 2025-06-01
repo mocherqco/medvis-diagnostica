@@ -28,9 +28,6 @@ MedVis Diagnostica is an advanced medical image classification platform designed
 pip install -r requirements.txt
 
 Run training pipeline
-bash
-Copy
-Edit
 python models/train_pipeline.py --config config/config.yaml
 
 Explore data
