@@ -10,3 +10,29 @@ MedVis Diagnostica is an advanced medical image classification platform designed
 - Support for batch-wise data loading and preprocessing
 
 ## 🗂️ Project Structure
+
+├── config/ # YAML configuration files
+├── data/ # Images and labels
+├── logs/ # Training logs
+├── models/ # Model architectures and training pipeline
+├── notebooks/ # Exploratory data analysis
+├── utils/ # Data loading and logging utilities
+├── requirements.txt # Python dependencies
+└── LICENSE # License information
+
+
+## 🚀 Getting Started
+
+### Install dependencies
+```bash
+pip install -r requirements.txt
+
+Run training pipeline
+bash
+Copy
+Edit
+python models/train_pipeline.py --config config/config.yaml
+
+Explore data
+Launch Jupyter Notebook and open notebooks/exploratory_analysis.ipyn
+```
