@@ -22,7 +22,9 @@ def main(config_path):
     )
     images = images / 255.0
 
-    input_shape = images.shape[1:]
+    if images.size == 0:
+    logger.error("No images found! Exiting.")
+    return
     logger.info(f"Model architecture: {config['training']['architecture']}")
 
     model = build_model(
