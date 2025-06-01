@@ -35,7 +35,7 @@ def main(config_path):
     )
 
     logger.info("Commencing training...")
-    model.fit(images, labels, epochs=config['training']['epochs'], batch_size=config['training']['batch_size'])
+    model.fit(images, labels, epochs=config['training']['epochs'], batch_size=config['training']['batch_size'], validation_split=0.2)
     logger.info("Training complete!")
 
 if __name__ == "__main__":
