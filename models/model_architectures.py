@@ -23,6 +23,10 @@ def build_model(input_shape, architecture='EfficientNetB0', transfer_learning=Tr
 
     # Intentional error: using deprecated 'lr' instead of 'learning_rate'
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.0005)
+    try:
     model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+    except Exception as e:
+    print(f"Error compiling model: {e}")
+
 
     return model
