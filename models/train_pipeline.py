@@ -22,7 +22,9 @@ def main(config_path):
     )
     images = images / 255.0
 
-    input_shape = images.shape[1:]
+    if images.size == 0:
+    logger.error("No images found! Exiting.")
+    return
     logger.info(f"Model architecture: {config['training']['architecture']}")
 
     model = build_model(
@@ -33,7 +35,7 @@ def main(config_path):
     )
 
     logger.info("Commencing training...")
-    model.fit(images, labels, epochs=config['training']['epochs'], batch_size=config['training']['batch_size'])
+    model.fit(images, labels, epochs=config['training']['epochs'], batch_size=config['training']['batch_size'], validation_split=0.2)
     logger.info("Training complete!")
 
 if __name__ == "__main__":
